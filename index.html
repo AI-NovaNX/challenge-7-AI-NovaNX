@@ -19,69 +19,6 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./css/output.css" />
-
-    
-
-    <style>
-      .font-outfit {
-        font-family: "Outfit", sans-serif;
-      }
-      /* (clean) multi-page setup: no overlay CSS required */
-      /* Theme variables: defaults reflect the current dark mode */
-      :root {
-        --bg: #000000;
-        --text: #FDFDFD;
-        --text-muted: #A4A7AE;
-        --surface: #0A0D12;
-        --border: #181D27;
-        --accent: #FF623E;
-        --overlay-bg: rgba(0, 0, 0, 0.8);
-        --base-black-50: rgba(0, 0, 0, 0.5);
-      }
-      /* Light mode overrides (activated by adding .theme-light to <html>) */
-      .theme-light {
-        --bg: #FFFFFF;
-        --text: #0A0D12;
-        --text-muted: #717680;
-        --surface: #FAFAFA;
-        --border: #DEDCDC;
-        --overlay-bg: rgba(255, 255, 255, 0.9);
-        --base-black-50: rgba(255, 255, 255, 0.7);
-        color-scheme: light;
-      }
-      /* Global text/background overrides to respect variables without changing markup */
-      html, body { background-color: var(--bg); color: var(--text); }
-      .theme-light body, .theme-light .site-header { background-color: var(--bg) !important; color: var(--text) !important; }
-      /* Override common arbitrary Tailwind color classes when in light mode */
-      .theme-light .bg-\[\#000000\] { background-color: var(--bg) !important; }
-      .theme-light .bg-\[\#0A0D12\] { background-color: var(--surface) !important; }
-      .theme-light .border-\[\#181D27\] { border-color: var(--border) !important; }
-      .theme-light .border-\[\#252B37\] { border-color: var(--border) !important; }
-      .theme-light .text-\[\#FDFDFD\] { color: var(--text) !important; }
-      .theme-light .text-\[\#A4A7AE\] { color: var(--text-muted) !important; }
-      .theme-light .bg-\[\#000000\]\/80 { background-color: var(--overlay-bg) !important; }
-      /* Backdrop in light mode: lighter dim */
-      .theme-light [data-overlay-backdrop] { background-color: rgba(0,0,0,0.2) !important; }
-      /* Smooth transitions for theme switch */
-      body, .site-header, #form-overlay, #form-overlay * { transition: background-color .25s, color .25s, border-color .25s; }
-    /* Floating toggle styles removed (toggle moved into menu page) */
-    /* Make specific header icons turn black in light mode */
-  .theme-light .theme-icon { filter: invert(1); }
-  /* Exception: keep certain elements black even in light mode */
-  .theme-light .force-black-bg { background-color: #000000 !important; }
-  /* Consultation CTA button uses custom contrast colors */
-  .theme-light .special-consultation-btn { color: #FFFFFF !important; }
-  /* Ensure Services checkboxes work in light mode (override bg and show checkmark) */
-  .theme-light input.peer:checked + span { background-color: #FF623E !important; border-color: #FF623E !important; }
-  .theme-light input.peer:checked + span img { opacity: 1 !important; }
-  /* Ensure Services checkboxes also work in dark mode */
-  input.peer:checked + span { background-color: #FF623E; border-color: #FF623E; }
-  input.peer:checked + span img { opacity: 1; }
-    
-    </style>
-
-
   </head>
   <body>
     <div id="root" class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased sm:mx-auto sm:float-none!">
