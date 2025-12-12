@@ -21,37 +21,7 @@
 
     <link rel="stylesheet" href="./css/output.css" />
 
-     <script>
-      // Initialize theme on the main page based on URL hint, saved preference, or system theme
-      (function(){
-        const root = document.documentElement;
-        const KEY = 'pref-theme';
-        const params = new URLSearchParams(window.location.search);
-        const forced = params.get('theme');
-
-        const applyTheme = (mode) => {
-          if (mode === 'light') root.classList.add('theme-light');
-          else root.classList.remove('theme-light');
-          localStorage.setItem(KEY, mode);
-        };
-
-        if (forced === 'light' || forced === 'dark') {
-          applyTheme(forced);
-          params.delete('theme');
-          if (window.history && window.history.replaceState) {
-            const query = params.toString();
-            const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
-            window.history.replaceState({}, '', nextUrl);
-          }
-        } else {
-          const stored = localStorage.getItem(KEY);
-          if (stored === 'light' || stored === 'dark') applyTheme(stored);
-          else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            root.classList.add('theme-light');
-          }
-        }
-      })();
-    </script>
+    
 
     <style>
       .font-outfit {
@@ -114,10 +84,7 @@
 
   </head>
   <body>
-    <div id="root">
-
-      class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased sm:mx-auto sm:float-none!"
-  >
+    <div id="root" class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased sm:mx-auto sm:float-none!">
 
   
 
@@ -132,7 +99,7 @@
         class="w-[393px] h-16 grid grid-cols-[42.3px_1fr_auto_auto] grid-rows-1 items-center mx-auto gap-2 px-4 md:hidden"
       >
         <div class="w-[26.3px] h-[28.85px]">
-          <img src="./public/Assets/Header/logo-symbol.svg" alt="Logo" />
+          <img src="/Assets/Header/logo-symbol.svg" alt="Logo" />
         </div>
         <div
           class="font-outfit font-semibold text-[21.33px]/[32px] tracking-[0%]"
@@ -156,7 +123,7 @@
           >
         </button>
         <a href="./menu.html" class="justify-self-end" aria-label="Open menu">
-          <img src="./public/Assets/Header/menu-01.svg" alt="" class="theme-icon" />
+          <img src="/Assets/Header/menu-01.svg" alt="" class="theme-icon" />
         </a>
       </div>
       <!-- akhir dari tampilan default (Mobile first )-->
@@ -166,7 +133,7 @@
           class="hidden md:grid mx-auto h-[84px] w-[1440px] grid-cols-[auto_auto_1fr_197px] items-center justify self-center px-[140px]"
         >
           <div class="w-[29.59px] h-[32.46px]">
-            <img src="./public/Assets/Header/logo-symbol.svg" alt="Logo" />
+            <img src="/Assets/Header/logo-symbol.svg" alt="Logo" />
           </div>
           <div
             class="ml-4 font-outfit font-semibold text-[24px]/[36px] tracking-[0]"
@@ -274,9 +241,9 @@
           class="w-[393px] h-[391px] mt-[43px] flex-col justify-center items-center"
         >
           <!-- Dark mode hero image (visible by default, hidden when .theme-light present on menu html) -->
-          <img src="./public/Assets/Image Hero.svg" alt="Hero Image Dark" class="block in-[.theme-light]:hidden" />
+          <img src="/Assets/Image Hero.svg" alt="Hero Image Dark" class="block in-[.theme-light]:hidden" />
           <!-- Light mode hero image (hidden by default, shown when .theme-light present) -->
-          <img src="./public/Assets/Hero-light.svg" alt="Hero Image Light" class="hidden in-[.theme-light]:block" />
+          <img src="/Assets/Hero-light.svg" alt="Hero Image Light" class="hidden in-[.theme-light]:block" />
         </div>
       <div class="w-[393px] h-[30px] mt-11">
           <p
@@ -287,8 +254,8 @@
         </div>
         <div class="w-[393px] h-[114px] bg-[#000000] grayscale flex flex-col items-center justify-center">
           <!-- Logos row: dark vs light theme swap -->
-          <img src="./public/Assets/Logos Row.svg" alt="Partner Logos Dark" class="block in-[.theme-light]:hidden" />
-          <img src="./public/Assets/Logo Row Light.svg" alt="Partner Logos Light" class="hidden in-[.theme-light]:block" />
+          <img src="/Assets/Logos Row.svg" alt="Partner Logos Dark" class="block in-[.theme-light]:hidden" />
+          <img src="/Assets/Logo Row Light.svg" alt="Partner Logos Light" class="hidden in-[.theme-light]:block" />
         </div>
         </div>
 
@@ -325,12 +292,12 @@
           <!-- Image column -->
           <div class="w-full">
             <img
-              src="./public/Assets/Assets-desktop/Image Hero.svg"
+              src="/Assets/Assets-desktop/Image Hero.svg"
               alt="Hero Image Dark"
               class="block in-[.theme-light]:hidden w-full h-auto "
             />
             <img
-              src="./public/Assets/Assets-desktop/Hero-light.svg"
+              src="/Assets/Assets-desktop/Hero-light.svg"
               alt="Hero Image Light"
               class="hidden in-[.theme-light]:block w-full h-auto"
             />
@@ -347,12 +314,12 @@
             class="mt-6 bg-(--bg) grayscale flex items-center justify-center md:justify-start"
           >
             <img
-              src="./public/Assets/Assets-desktop/Dark-Logo-Rows.svg"
+              src="/Assets/Assets-desktop/Dark-Logo-Rows.svg"
               alt="Partner Logos Dark"
               class="block in-[.theme-light]:hidden w-full h-auto"
             />
             <img
-              src="./public/Assets/Assets-desktop/Light-Logo-Rows.svg"
+              src="/Assets/Assets-desktop/Light-Logo-Rows.svg"
               alt="Partner Logos Light"
               class="hidden in-[.theme-light]:block w-full h-auto"
             />
@@ -476,7 +443,7 @@
                     Discovery & Consultation
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -498,7 +465,7 @@
                     Planning & Strategy
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -518,7 +485,7 @@
                     Design & Prototyping
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -539,7 +506,7 @@
                     Development & Implementation
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -560,7 +527,7 @@
                     Testing & Optimization
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -581,7 +548,7 @@
                     Launch & Growth
                     <div class="w-6 h-6 flex absolute top-4 right-4">  
                       <span class="m-auto">
-                        <img src="./public/Assets/chevron-up.svg" alt="chevron-up">
+                        <img src="/Assets/chevron-up.svg" alt="chevron-up">
                       </span>
                     </div>   
                   </h2>
@@ -610,7 +577,7 @@
                 <div class="w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Discovery & Consultation</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Understand Your Needs & Goals</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
                 <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">1</div> <!-- lingkaran-->
 
@@ -618,7 +585,7 @@
                 <div class="col-start-3 col-end-4 row-start-2 row-end-3  w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Planning & Strategy</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Build a Clear, Scalable Roadmap</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3   w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">2</div> <!-- lingkaran-->
 
@@ -626,7 +593,7 @@
                 <div class="col-start-1 col-end-2 row-start-3 row-end-4  w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Design & Prototyping</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Craft UX That Converts</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-3 row-end-4  w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">3</div> <!-- lingkaran-->
 
@@ -634,7 +601,7 @@
                 <div class="col-start-3 col-end-4 row-start-4 row-end-5  w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Development & Implementation</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Deliver With Speed & Precision</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-4 row-end-5   w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">4</div> <!-- lingkaran-->
 
@@ -642,7 +609,7 @@
                 <div class="col-start-1 col-end-2 row-start-5 row-end-6  w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Testing & Optimization</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Ensure Quality at Every Step</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
 
                 <div class="col-start-2 col-end-3 row-start-5 row-end-6  w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">5</div> <!-- lingkaran-->
@@ -651,7 +618,7 @@
                 <div class="col-start-3 col-end-4 row-start-6 row-end-7  w-[532px] h-[116px] border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
                   <h3 class="font-['Quicksand'] font-bold text-[#FDFDFD]  text-[20px]/[34px] tracking-[0em]">Launch & Growth</h3>
                   <p class="mt-1 font-['Quicksand']  font-mediumtext-(--text-muted) text-[16px]/[30px] tracking-[0em]">Scale, Measure & Improve Continuously</p>
-                  <img src="./public/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
+                  <img src="/Assets/Assets-desktop/chevron-up.svg" alt="" class="absolute top-6 right-6"/>
                 </div>
                 <div class="col-start-2 col-end-3 row-start-6 row-end-7  w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] text-[#FFFFFF] mb-4 z-2">6</div> <!-- lingkaran-->
               </div>   <!-- grid end-->
@@ -682,7 +649,7 @@
           <div class="w-[361px] h-[130px] mx-4 mt-7 flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
              <div class="w-16 h-16 flex absolute bottom-[87px] left-5">  
                       <span class="m-auto">
-                        <img src="./public/Assets/Icon.svg" alt="web">
+                        <img src="/Assets/Icon.svg" alt="web">
                       </span>
               </div>    
               <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -702,7 +669,7 @@
           <div class="w-[361px] h-[158px] mx-4 mt-10 flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
              <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
                       <span class="m-auto">
-                        <img src="./public/Assets/Icon-1.svg" alt="web">
+                        <img src="/Assets/Icon-1.svg" alt="web">
                       </span>
               </div>    
               <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -720,7 +687,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-2.svg" alt="web">
+                <img src="/Assets/Icon-2.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -738,7 +705,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-3.svg" alt="web">
+                <img src="/Assets/Icon-3.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -756,7 +723,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-4.svg" alt="web">
+                <img src="/Assets/Icon-4.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -774,7 +741,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-5.svg" alt="web">
+                <img src="/Assets/Icon-5.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -792,7 +759,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-6.svg" alt="web">
+                <img src="/Assets/Icon-6.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -810,7 +777,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-7.svg" alt="web">
+                <img src="/Assets/Icon-7.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -828,7 +795,7 @@
           <div class="w-[361px] h-[158px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative mt-10 mx-4">
             <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/Icon-8.svg" alt="web">
+                <img src="/Assets/Icon-8.svg" alt="web">
               </span>
             </div>    
             <div class="w-[333.33px] h-[62px] flex flex-col mx-5 mt-12">
@@ -861,7 +828,7 @@
             <div class="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               <!-- Card 1 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon.svg" alt="Web" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon.svg" alt="Web" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Web Development</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Build fast, scalable, and SEO-friendly websites.</p>
@@ -870,7 +837,7 @@
 
               <!-- Card 2 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-1.svg" alt="Mobile" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-1.svg" alt="Mobile" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Mobile App Development</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Native & cross-platform apps tailored to user needs.</p>
@@ -879,7 +846,7 @@
 
               <!-- Card 3 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-2.svg" alt="UI/UX" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-2.svg" alt="UI/UX" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">UI/UX Design</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Delight users with intuitive and beautiful interfaces</p>
@@ -888,7 +855,7 @@
 
               <!-- Card 4 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-3.svg" alt="Cloud" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-3.svg" alt="Cloud" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Cloud Solutions</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Secure and flexible cloud infrastructure for your growth.</p>
@@ -897,7 +864,7 @@
 
               <!-- Card 5 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-4.svg" alt="Software" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-4.svg" alt="Software" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Software Development</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Custom solutions built around your business logic.</p>
@@ -906,7 +873,7 @@
 
               <!-- Card 6 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-5.svg" alt="Infrastructure" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-5.svg" alt="Infrastructure" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">IT Infrastructure</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Scale your backend with reliable tech foundations.</p>
@@ -915,7 +882,7 @@
 
               <!-- Card 7 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-6.svg" alt="Cybersecurity" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-6.svg" alt="Cybersecurity" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Cybersecurity Services</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Stay protected with enterprise-grade security.</p>
@@ -924,7 +891,7 @@
 
               <!-- Card 8 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-7.svg" alt="QA" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-7.svg" alt="QA" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">QA Solutions</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Ensure performance with rigorous testing frameworks.</p>
@@ -933,7 +900,7 @@
 
               <!-- Card 9 -->
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
-                <img src="./public/Assets/Icon-8.svg" alt="Consulting" class="w-10 h-10 absolute top-6 left-6" />
+                <img src="/Assets/Icon-8.svg" alt="Consulting" class="w-10 h-10 absolute top-6 left-6" />
                 <div class="mt-12">
                   <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">IT Consulting & Support</h3>
                   <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Make smarter tech decisions with expert guidance.</p>
@@ -982,7 +949,7 @@
           <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-left text-[14px]/[28px] tracking-[0em]">
             We build secure, scalable, and compliant fintech solutions — from digital wallets to core banking systems — tailored to modern financial needs.
           </p>
-          <img src="./public/Assets/Industry Image Container.svg" alt="Industry Image" class="mt-4"/>
+          <img src="/Assets/Industry Image Container.svg" alt="Industry Image" class="mt-4"/>
         </div>
 
 
@@ -1032,21 +999,21 @@
             <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
               We build secure, scalable, and compliant fintech solutions — from digital wallets to core banking systems — tailored to modern financial needs.
             </p>
-            <img src="./public/Assets/Assets-desktop/Build-for-Your-Industry/Finance.svg" alt="Industry Image" class="mt-4" />
+            <img src="/Assets/Assets-desktop/Build-for-Your-Industry/Finance.svg" alt="Industry Image" class="mt-4" />
           </div>
 
           <div id="ecommerce" data-industry="ecommerce" class="w-[840px] h-[435px] mx-4 mt-0 hidden">
             <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
               Boost your online sales with fast, reliable platforms designed for seamless shopping experiences, inventory management, and payment integration.
             </p>
-            <img src="./public/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container-1.svg" alt="Industry Image" class="mt-4" />
+            <img src="/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container-1.svg" alt="Industry Image" class="mt-4" />
           </div>
 
           <div id="healthcare" data-industry="healthcare" class="w-[840px] h-[435px] mx-4 mt-0 hidden">
             <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
               Empowering healthcare providers with digital solutions that improve patient care, ensure data privacy, and streamline operational workflows.
             </p>
-            <img src="./public/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container.svg" alt="Industry Image" class="mt-4" />
+            <img src="/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container.svg" alt="Industry Image" class="mt-4" />
           </div>
         </div>
       </div>
@@ -1076,7 +1043,7 @@
           </div>
         
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
-            <img src="./public/Assets/image 214.svg" alt="Portofolio-1" />
+            <img src="/Assets/image 214.svg" alt="Portofolio-1" />
             <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
             <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
@@ -1085,7 +1052,7 @@
           </div>
 
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
-            <img src="./public/Assets/image 214-1.svg" alt="Portofolio-1" />
+            <img src="/Assets/image 214-1.svg" alt="Portofolio-1" />
             <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
             <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
@@ -1094,7 +1061,7 @@
           </div>
 
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
-            <img src="./public/Assets/image 214-2.svg" alt="Portofolio-1" />
+            <img src="/Assets/image 214-2.svg" alt="Portofolio-1" />
             <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
             <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
@@ -1117,19 +1084,19 @@
             <div class="mt-10 grid grid-cols-3 gap-6 lg:gap-8">
               <!-- Project 1 -->
               <div class="flex flex-col">
-                <img src="./public/Assets/image 214.svg" alt="Portfolio 1" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <img src="/Assets/image 214.svg" alt="Portfolio 1" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
                 <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
                 <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 1</p>
               </div>
               <!-- Project 2 -->
               <div class="flex flex-col">
-                <img src="./public/Assets/image 214-1.svg" alt="Portfolio 2" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <img src="/Assets/image 214-1.svg" alt="Portfolio 2" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
                 <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
                 <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 2</p>
               </div>
               <!-- Project 3 -->
               <div class="flex flex-col">
-                <img src="./public/Assets/image 214-2.svg" alt="Portfolio 3" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <img src="/Assets/image 214-2.svg" alt="Portfolio 3" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
                 <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
                 <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 3</p>
               </div>
@@ -1154,16 +1121,16 @@
           <div class="w-[361px] h-[284px] mx-4 flex flex-col items-center border border-[#181D27] bg-[#0A0D12] rounded-2xl justify-center relative transform transform-gpu transition-all duration-500 ease-out translate-x-0 opacity-100"> <!-- awal dari kotak-->
             <div class="w-16 h-16 flex absolute bottom-[254px] left-5">  
               <span class="m-auto">
-                <img src="./public/Assets/tdesign_quote-filled.svg" alt="web">
+                <img src="/Assets/tdesign_quote-filled.svg" alt="web">
               </span>
             </div>    
             <div class="w-[329px] flex flex-col mt-0">
               <div class="flex justify-center gap-1 mb-2">
-                <img src="./public/Assets/line-md_star-filled.svg" alt="">
-                <img src="./public/Assets/line-md_star-filled.svg" alt="">
-                <img src="./public/Assets/line-md_star-filled.svg" alt="">
-                <img src="./public/Assets/line-md_star-filled.svg" alt="">
-                <img src="./public/Assets/line-md_star-filled.svg" alt="">
+                <img src="/Assets/line-md_star-filled.svg" alt="">
+                <img src="/Assets/line-md_star-filled.svg" alt="">
+                <img src="/Assets/line-md_star-filled.svg" alt="">
+                <img src="/Assets/line-md_star-filled.svg" alt="">
+                <img src="/Assets/line-md_star-filled.svg" alt="">
               </div>
             <div>
               <p data-quote-target class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[14px]/[28px] tracking-[0em]">
@@ -1177,7 +1144,7 @@
           </div>
           <div class="w-15 h-15 flex absolute mx-[166.5px] -bottom-[30px]">  
               <span class="m-auto">
-                <img src="./public/Assets/Ellipse 1.svg" alt="web">
+                <img src="/Assets/Ellipse 1.svg" alt="web">
               </span>
             </div>  
           </div> <!-- akhir dari kotak-->
@@ -1208,15 +1175,15 @@
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-8 relative">
                 <div class="w-20 h-20 flex absolute -top-10 left-8">
                   <span class="m-auto">
-                    <img src="./public/Assets/Assets-desktop/tdesign_quote-filled.svg" alt="quote">
+                    <img src="/Assets/Assets-desktop/tdesign_quote-filled.svg" alt="quote">
                   </span>
                 </div>
                 <div class="flex justify-center gap-1 mb-2">
-                  <img src="./public/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
-                  <img src="./public/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
-                  <img src="./public/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
-                  <img src="./public/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
-                  <img src="./public/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="/Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
                 </div>
                 <p data-quote-target class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[18px]/[32px] tracking-[0em]">
                   “The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”
@@ -1227,7 +1194,7 @@
                 </div>
                 <div class="w-15 h-15 flex absolute left-1/2 -translate-x-1/2 -bottom-[30px]">
                   <span class="m-auto">
-                    <img src="./public/Assets/Assets-desktop/Ellipse 1.svg" alt="web">
+                    <img src="/Assets/Assets-desktop/Ellipse 1.svg" alt="web">
                   </span>
                 </div>
               </div>
@@ -1270,11 +1237,11 @@
                   <h3 class="font-Quicksand font-bold text-[18px]/[32px] tracking-[0em]">What services do you offer?</h3>
                   <span class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                     <!-- dark -->
-                    <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                     <!-- light -->
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                   </span>
                 </div>
               </summary>
@@ -1288,10 +1255,10 @@
                 <div class="flex items-center justify-between gap-4">
                   <h3 class="font-Quicksand font-bold text-[18px]/[32px] tracking-[0em]">How do I know if this is right for my business?</h3>
                   <span class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
-                    <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                    <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                   </span>
                 </div>
               </summary>
@@ -1305,10 +1272,10 @@
                 <div class="flex items-center justify-between gap-4">
                   <h3 class="font-Quicksand font-bold text-[18px]/[32px] tracking-[0em]">How much does a project cost?</h3>
                   <span class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
-                    <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                    <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                   </span>
                 </div>
               </summary>
@@ -1323,10 +1290,10 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                 <div class="flex items-center justify-between gap-4">
                   <h3 class="font-Quicksand font-bold text-[18px]/[32px] tracking-[0em]">How long does it take?</h3>
                   <span class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
-                    <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                    <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                   </span>
                 </div>
               </summary>
@@ -1340,10 +1307,10 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                 <div class="flex items-center justify-between gap-4">
                   <h3 class="font-Quicksand font-bold text-[18px]/[32px] tracking-[0em]">Can I start with a small project first?</h3>
                   <span class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
-                    <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                    <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                    <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                    <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                    <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                   </span>
                 </div>
               </summary>
@@ -1360,7 +1327,7 @@ Every project is different. Let’s talk about your needs to get a tailored esti
             <p class="font-['Quicksand'] font-semibold text-left text-[14px]/[28px] tracking-[0em] text-[#FFFFFF] mx-5 mt-1">
               book a free consultation with our team.
             </p>
-            <img src="./public/Assets/Consultation Image.svg" alt="Need Help Image" class="mt-4 mx-auto"/>
+            <img src="/Assets/Consultation Image.svg" alt="Need Help Image" class="mt-4 mx-auto"/>
             <div class="w-[321px] h-11 bg-[#000000] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-4 flex items-center justify-center force-black-bg">
               <p class="font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[16px]/[30px] tracking-[-0.02em]">Free Consultation</p>
             </div>
@@ -1386,11 +1353,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">What services do you offer?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <!-- Dark theme icons -->
-                          <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                          <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                           <!-- Light theme icons -->
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1405,11 +1372,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How do I know if this is right for my business?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <!-- Dark theme icons -->
-                          <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                          <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                           <!-- Light theme icons -->
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1423,11 +1390,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How much does a project cost?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <!-- Dark theme icons -->
-                          <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                          <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                           <!-- Light theme icons -->
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1441,11 +1408,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How long does it take?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <!-- Dark theme icons -->
-                          <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                          <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                           <!-- Light theme icons -->
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1459,11 +1426,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">Can I start with a small project first?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <!-- Dark theme icons -->
-                          <img src="./public/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
-                          <img src="./public/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
                           <!-- Light theme icons -->
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
-                          <img src="./public/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1478,7 +1445,7 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                 <div class="rounded-2xl bg-[#CC4E32] p-8 flex flex-col w-[329px]  h-[453.38px] mt-4">
                   <h3 class="font-['Quicksand'] text-[#FFFFFF] font-bold text-[36px]/[44px] tracking-[-0.02em]">Let’s talk it through</h3>
                   <p class="font-['Quicksand'] font-semibold text-[18px]/[32px] tracking-[0em] mt-2 text-white">Book a free consultation with our team.</p>
-                  <img src="./public/Assets/Assets-desktop/Consultation Image.svg" alt="Consultation" class="mt-6 w-full h-auto" />
+                  <img src="/Assets/Assets-desktop/Consultation Image.svg" alt="Consultation" class="mt-6 w-full h-auto" />
                   <button type="button" class="mt-auto h-12 w-[281px] force-black-bg special-consultation-btn bg-[#FFFFFF] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] 
                   rounded-full inline-flex items-center justify-center font-['Quicksand'] text-[#000000] 
                   font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2
@@ -1527,42 +1494,42 @@ Every project is different. Let’s talk about your needs to get a tailored esti
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="web-development" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Web Development</span>
               </label>
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="mobile-app-development" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Mobile App Development</span>
               </label>
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="ui-ux-design" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">UI/UX Design</span>
               </label>
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="cloud-solutions" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Cloud Solutions</span>
               </label>
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="software-development" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Software Development</span>
               </label>
               <label class="flex items-center gap-3 cursor-pointer">
                 <input type="checkbox" name="services" value="other" class="peer sr-only" />
                 <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                  <img src="./Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                  <img src="/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                 </span>
                 <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
               </label>
@@ -1605,42 +1572,42 @@ Every project is different. Let’s talk about your needs to get a tailored esti
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="web-development" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand'] font-medium  text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">Web Development</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="mobile-app-development" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand'] font-medium  text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">Mobile App Development</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="ui-ux-design" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand'] font-medium  text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">UI/UX Design</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="cloud-solutions" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand']  font-medium text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">Cloud Solutions</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="software-development" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand'] font-medium  text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">Software Development</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" name="services" value="other" class="peer sr-only" />
                     <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-checked:[&_img]:opacity-100 peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                      <img src="./Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
+                      <img src="/Assets/Assets-desktop/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none" />
                     </span>
                     <span class="font-['Quicksand'] font-medium   text-[16px]/[30px] text-[#FDFDFD] tracking-[0em]">Other</span>
                   </label>
@@ -1675,7 +1642,7 @@ Every project is different. Let’s talk about your needs to get a tailored esti
           <div class="w-[353px] h-[374px] rounded-2xl border border-[#252B37] bg-[#000000]/80  text-[#FDFDFD]">
             <div class="flex flex-col items-center gap-3 h-full pb-10">
               <div class="w-full h-[160px] bg-[#0A0D12] flex items-center justify-center">
-                <img id="form-overlay-icon" src="./public/Assets/Message.svg" alt="" class="w-[140px] h-[140px]" />
+                <img id="form-overlay-icon" src="/Assets/Message.svg" alt="" class="w-[140px] h-[140px]" />
               </div>
               <div class="w-full h-auto flex flex-col items-center justify-center">
                 <h3 id="form-overlay-title" class="font-['Quicksand'] font-bold text-center text-[18px]/[32px] text-[#FDFDFD]">Message Received!</h3>
@@ -1694,7 +1661,7 @@ Every project is different. Let’s talk about your needs to get a tailored esti
         <div class="container w-[393px] h-[544px] mx-auto flex flex-col mt-auto md:hidden">
           <div class="w-[361px] h-[496px] flex flex-col mx-auto mt-6 bg-[#0A0D12] border border-[#181D27] rounded-[24px]">    
               <div class="w-[150px] h-[32px] grid grid-cols-[auto_auto] grid-rows-[32px] gap-[8.48px]  ml-4 mt-5">
-                <img src="./Assets/Header/logo-symbol.svg" alt="Company Logo"/>
+                <img src="/Assets/Header/logo-symbol.svg" alt="Company Logo"/>
                 <p class="font-outfit font-semibold text-[21.33px]/[32px] tracking-[0em]">AI-NovaNX</p>
               </div>
               <div class="w-auto h-[76px] flex">
@@ -1715,21 +1682,21 @@ Every project is different. Let’s talk about your needs to get a tailored esti
               <div class="w-[208px] h-10 grid grid-cols-[repeat(4,40px)] gap-4 ml-4 mt-7">
                 <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
                   <!-- Dark icon -->
-                  <img src="./Assets/Vector.svg" alt="Facebook" class="h-4 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Vector.svg" alt="Facebook" class="h-4 w-auto block in-[.theme-light]:hidden" />
                   <!-- Light icon -->
-                  <img src="./Assets/Light-Mode/Vector.svg" alt="Facebook (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Light-Mode/Vector.svg" alt="Facebook (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
                 </div>
                 <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
-                  <img src="./Assets/Vector-1.svg" alt="Instagram" class="h-4 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector1.svg" alt="Instagram (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-1.svg" alt="Instagram" class="h-4 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector1.svg" alt="Instagram (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
                 </div>
                 <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
-                  <img src="./Assets/Vector-2.svg" alt="LinkedIn" class="h-4 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector2.svg" alt="LinkedIn (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-2.svg" alt="LinkedIn" class="h-4 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector2.svg" alt="LinkedIn (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
                 </div>
                 <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
-                  <img src="./Assets/Vector-3.svg" alt="Tiktok" class="h-4 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector3.svg" alt="Tiktok (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-3.svg" alt="Tiktok" class="h-4 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector3.svg" alt="Tiktok (Light)" class="h-4 w-auto hidden in-[.theme-light]:block" />
                 </div>
               </div>
           </div>
@@ -1741,7 +1708,7 @@ Every project is different. Let’s talk about your needs to get a tailored esti
           <div class="mx-auto w-[1160px] h-[328px] rounded-[32px] border border-[#181D27] bg-[#0A0D12] px-10 py-10 text-[#FDFDFD] flex-col content"> <!-- awal kotak rounded -->
               <div class="w-[1080px] h-[88px] flex justify-between  items-start">
                 <div class="flex order-2">
-                      <img src="./Assets/Header/logo-symbol.svg" alt="Company Logo" class="h-10 w-auto" />
+                      <img src="/Assets/Header/logo-symbol.svg" alt="Company Logo" class="h-10 w-auto" />
                       <p class="font-outfit font-semibold text-[24px]/[36px] tracking-[0em]">AI-NovaNX</p>
                 </div>
               
@@ -1760,20 +1727,20 @@ Every project is different. Let’s talk about your needs to get a tailored esti
               </nav>
               <div class="flex items-center gap-4">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]">
-                  <img src="./Assets/Vector.svg" alt="Facebook" class="h-5 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector.svg" alt="Facebook (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector.svg" alt="Facebook" class="h-5 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector.svg" alt="Facebook (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
                 </span>
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]">
-                  <img src="./Assets/Vector-1.svg" alt="Instagram" class="h-5 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector1.svg" alt="Instagram (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-1.svg" alt="Instagram" class="h-5 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector1.svg" alt="Instagram (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
                 </span>
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]">
-                  <img src="./Assets/Vector-2.svg" alt="LinkedIn" class="h-5 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector2.svg" alt="LinkedIn (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-2.svg" alt="LinkedIn" class="h-5 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector2.svg" alt="LinkedIn (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
                 </span>
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]">
-                  <img src="./Assets/Vector-3.svg" alt="Tiktok" class="h-5 w-auto block in-[.theme-light]:hidden" />
-                  <img src="./Assets/Light-Mode/Vector3.svg" alt="Tiktok (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
+                  <img src="/Assets/Vector-3.svg" alt="Tiktok" class="h-5 w-auto block in-[.theme-light]:hidden" />
+                  <img src="/Assets/Light-Mode/Vector3.svg" alt="Tiktok (Light)" class="h-10 w-auto hidden in-[.theme-light]:block" />
                 </span>
               </div>
             </div>    
@@ -1788,155 +1755,11 @@ Every project is different. Let’s talk about your needs to get a tailored esti
 
     </div>
 
+    <!-- React app root (separate from static page content) -->
+    <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-<script>
-      // Testimonial slider dots activate matching content
-      (function () {
-        const sections = Array.from(document.querySelectorAll("[data-testimonials]"));
-        if (!sections.length) return;
-
-        const slides = [
-          {
-            quote:
-              "“The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”",
-            name: "Sarah Tan",
-            role: "Product Manager at Finovate",
-          },
-          {
-            quote:
-              "“AI-NovaNX helped us modernize a legacy platform in record time. The collaboration felt seamless from strategy to deployment.”",
-            name: "Sarah Tan",
-            role: "Product Manager at Finovate",
-          },
-          {
-            quote:
-              "“Their proactive support and ability to anticipate risks kept our launch on schedule. It’s rare to find a partner this committed.”",
-            name: "Sarah Tan",
-            role: "Product Manager at Finovate",
-          },
-        ];
-
-        sections.forEach((section) => {
-          const quoteEl = section.querySelector("[data-quote-target]");
-          const nameEl = section.querySelector("[data-name-target]");
-          const roleEl = section.querySelector("[data-role-target]");
-          const dots = Array.from(section.querySelectorAll("[data-dot]"));
-          if (!quoteEl || !nameEl || !roleEl || dots.length === 0) return;
-
-          const setSlide = (index) => {
-            const slide = slides[index];
-            if (!slide) return;
-            quoteEl.textContent = slide.quote;
-            nameEl.textContent = slide.name;
-            roleEl.textContent = slide.role;
-            dots.forEach((dot, i) => {
-              const isActive = i === index;
-              dot.dataset.active = isActive ? "true" : "false";
-              dot.setAttribute("aria-pressed", isActive ? "true" : "false");
-            });
-          };
-
-          const initialIndex = dots.findIndex((dot) => dot.dataset.active === "true");
-          setSlide(initialIndex >= 0 ? initialIndex : 0);
-
-          dots.forEach((dot, index) => {
-            const activate = () => setSlide(index);
-            dot.addEventListener("click", activate);
-            dot.addEventListener("keydown", (event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                activate();
-              }
-            });
-          });
-        });
-      })();
-    </script>
-
-   
-   <script>
-      // Drawer interactivity for industry links
-      (function () {
-        const drawer = document.getElementById("industry-drawer");
-        const links = Array.from(
-          document.querySelectorAll("[data-industry-link]")
-        );
-        if (!drawer || !links.length) return;
-
-        const panels = Array.from(drawer.querySelectorAll("[data-industry]"));
-        if (!panels.length) return;
-
-        const showPanel = (id) => {
-          drawer.classList.remove("hidden");
-          panels.forEach((panel) => {
-            const isMatch = panel.dataset.industry === id;
-            panel.classList.toggle("hidden", !isMatch);
-          });
-          window.history.replaceState(null, "", `#${id}`);
-        };
-
-        links.forEach((link) => {
-          link.addEventListener("click", (event) => {
-            const target = link.getAttribute("href")?.slice(1);
-            if (!target) return;
-            event.preventDefault();
-            showPanel(target);
-            drawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          });
-        });
-
-        const initialHash = window.location.hash.slice(1);
-        if (initialHash) {
-          const panelExists = panels.some(
-            (panel) => panel.dataset.industry === initialHash
-          );
-          if (panelExists) showPanel(initialHash);
-        }
-      })();
-    </script> 
-
-    <script>
-      // Shared theme toggle control for desktop and mobile buttons
-      (function () {
-        const toggles = Array.from(
-          document.querySelectorAll("[data-theme-toggle]")
-        );
-        if (!toggles.length) return;
-
-        const root = document.documentElement;
-        const KEY = "pref-theme";
-
-        const sync = () => {
-          const isLight = root.classList.contains("theme-light");
-          toggles.forEach((toggle) => {
-            toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
-            toggle.setAttribute(
-              "aria-label",
-              isLight ? "Switch to dark theme" : "Switch to light theme"
-            );
-            const label = toggle.querySelector("[data-theme-label]");
-            if (label) {
-              const nextIcon = isLight
-                ? label.dataset.light || "☀︎"
-                : label.dataset.dark || "🌙";
-              label.textContent = nextIcon;
-            }
-          });
-        };
-
-        toggles.forEach((toggle) => {
-          toggle.addEventListener("click", () => {
-            const nextIsLight = !root.classList.contains("theme-light");
-            root.classList.toggle("theme-light", nextIsLight);
-            localStorage.setItem(KEY, nextIsLight ? "light" : "dark");
-            sync();
-          });
-        });
-
-        sync();
-      })();
-    </script>
+    
 
   </body>
 </html>
