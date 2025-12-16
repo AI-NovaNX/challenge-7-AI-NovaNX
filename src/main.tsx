@@ -8,6 +8,7 @@ import {
 } from "./components/ui/scripts/theme.ts";
 import { setupTestimonials } from "./components/ui/scripts/testimonials.ts";
 import { setupIndustryDrawer } from "./components/ui/scripts/industryDrawer.ts";
+import { preloadDefaultFeedbackIcons } from "./components/ui/scripts/iconCache.ts";
 
 // Initialize page scripts
 initThemeFromURLOrStorage();
@@ -15,6 +16,7 @@ initThemeFromURLOrStorage();
 setupThemeToggles();
 setupTestimonials();
 setupIndustryDrawer();
+preloadDefaultFeedbackIcons();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

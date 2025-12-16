@@ -51,9 +51,12 @@ const FeedbackOverlayFailed: React.FC<FeedbackOverlayProps> = ({
               <div className="w-full h-[160px] bg-[#0A0D12] flex items-center justify-center">
                 <img
                   id="form-overlay-icon"
-                  src={iconSrc || defaultIcon}
+                  src={iconSrc || "/Assets/MobileMessageFailed.svg"}
                   alt="Message Failed Icon"
                   className="w-[140px] h-[140px]"
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
                 />
               </div>
               <div className="w-full h-auto flex flex-col items-center justify-center">
@@ -108,9 +111,12 @@ const FeedbackOverlayFailed: React.FC<FeedbackOverlayProps> = ({
               <div className="w-full h-[228px] bg-[#0A0D12] flex items-center justify-center">
                 <img
                   id="form-overlay-icon"
-                  src={iconSrc || defaultIcon}
+                  src={iconSrc || "/Assets/MessageFailed.svg"}
                   alt="Message Failed Icon"
                   className="w-[228px] h-[228px]"
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
                 />
               </div>
               <div className="w-full h-auto flex flex-col items-center justify-center">
