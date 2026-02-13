@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Button from "../Button/Button";
-import defaultIcon from "/Assets/MessageFailed.svg";
+//import defaultIcon from "/Assets/MessageFailed.svg";
 
 export interface FeedbackOverlayProps {
   open: boolean;
