@@ -116,7 +116,7 @@ const Hero = () => {
       <div id="header-spacer" className="block h-16 md:h-[84px]"></div>
 
       {/* Hero Section */}
-      <hero-section id="about" class="scroll-mt-16">
+      <section id="about" className="scroll-mt-16">
         {/* Mobile layout */}
         <div className="md:hidden">
           <div className="w-[393px] h-[88px] mt-[61px] grid grid-cols-[16px_361px_16px] grid-rows-[88px]">
@@ -231,7 +231,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </hero-section>
+      </section>
     </section>
   );
 };
